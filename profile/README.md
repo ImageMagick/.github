@@ -23,7 +23,7 @@
 
 * **Download:** Head over to [https://imagemagick.org/script/download.php](https://imagemagick.org/script/download.php) to download the latest version for your platform.
 * **Documentation:** Explore the comprehensive documentation at [https://imagemagick.org/script/command-line-tools.php](https://imagemagick.org/script/command-line-tools.php) to learn about ImageMagick's features and usage.
-* **Community:** Join the active ImageMagick community on [https://imagemagick.org/](https://imagemagick.org/) for support, tutorials, and discussions.
+* **Community:** Join the active ImageMagick community on [GitHub](https://github.com/ImageMagick/ImageMagick/discussions) for support, tutorials, and discussions.
 
 **Who uses ImageMagick?**
 
