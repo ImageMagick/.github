@@ -1,0 +1,49 @@
+name: Code Signing
+description: Sign files using Azure Trusted Signing
+inputs:
+  client-id:
+    description: Azure Client ID
+  tenant-id:
+    description: Azure Tenant ID
+  subscription-id:
+    description: Azure Subscription ID
+  directory:
+    description: Directory containing files to sign
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Check if signing should be performed
+      id: should_sign
+      run: |
+        $shouldSign = $false
+        if ("${{inputs.client-id}}" -ne "" -and "${{inputs.tenant-id}}" -ne "" -and "${{inputs.subscription-id}}" -ne "") {
+          $shouldSign = $true
+        }
+        echo "should_sign=$shouldSign" >> $env:GITHUB_OUTPUT
+        echo "Should sign: $shouldSign"
+
+    - name: Azure CLI login with federated credential
+      if: steps.should_sign.outputs.should_sign == 'true'
+      uses: azure/login@v2
+      with:
+        client-id: ${{inputs.client-id}}
+        tenant-id: ${{inputs.tenant-id}}
+        subscription-id: ${{inputs.subscription-id}}
+
+    - name: Install sign cli
+      if: steps.should_sign.outputs.should_sign == 'true'
+      run: dotnet tool install --global sign --prerelease
+
+    - name: Sign executables and libraries
+      if: steps.should_sign.outputs.should_sign == 'true'
+      run: |
+        sign code trusted-signing `
+          --trusted-signing-account ImageMagick `
+          --trusted-signing-certificate-profile ImageMagick `
+          --trusted-signing-endpoint https://eus.codesigning.azure.net `
+          --azure-credential-type azure-cli `
+          --verbosity information `
+          *.exe *.dll
+      working-directory: ${{inputs.working-directory}}
