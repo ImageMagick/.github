@@ -49,4 +49,4 @@ runs:
           --azure-credential-type azure-cli `
           --verbosity information `
           *.exe *.dll
-      working-directory: ${{inputs.working-directory}}
+      working-directory: ${{inputs.directory}}
