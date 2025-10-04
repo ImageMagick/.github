@@ -40,7 +40,7 @@ runs:
 
     - name: Sign executables and libraries
       if: steps.should_sign.outputs.should_sign == 'true'
-      shell: cmd
+      shell: pwsh
       run: |
         sign code trusted-signing `
           --trusted-signing-account ImageMagick `
