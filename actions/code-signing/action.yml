@@ -16,6 +16,7 @@ runs:
   steps:
     - name: Check if signing should be performed
       id: should_sign
+      shell: pwsh
       run: |
         $shouldSign = $false
         if ("${{inputs.client-id}}" -ne "" -and "${{inputs.tenant-id}}" -ne "" -and "${{inputs.subscription-id}}" -ne "") {
@@ -34,10 +35,12 @@ runs:
 
     - name: Install sign cli
       if: steps.should_sign.outputs.should_sign == 'true'
+      shell: cmd
       run: dotnet tool install --global sign --prerelease
 
     - name: Sign executables and libraries
       if: steps.should_sign.outputs.should_sign == 'true'
+      shell: cmd
       run: |
         sign code trusted-signing `
           --trusted-signing-account ImageMagick `
