@@ -2,7 +2,7 @@
 
 Before you report a vulnerability, first take the following steps:
 
-- Ensure you are using the latest version of ImageMagick [7](https://github.com/ImageMagick/ImageMagick/releases) or [6](https://github.com/ImageMagick/ImageMagick6/tags)
+- Ensure you are using the latest version of ImageMagick [7](https://github.com/ImageMagick/ImageMagick/releases) or [6](https://github.com/ImageMagick/ImageMagick6/releases)
 - Attempt to mitigate the vulnerability using a properly curated [security policy](https://imagemagick.org/script/security-policy.php)
   - Verify your policy using the [validation tool](https://imagemagick-secevaluator.doyensec.com/)
   - Confirm that the security policy mitigation steps did not resolve the issue
