@@ -59,7 +59,7 @@ runs:
         dotnet tool run sign code trusted-signing `
           --base-directory ${{ inputs.directory }} `
           --trusted-signing-account ImageMagick `
-          --trusted-signing-certificate-profile ImageMagick `
+          --trusted-signing-certificate-profile ImageMagick2028 `
           --trusted-signing-endpoint https://eus.codesigning.azure.net `
           --azure-credential-type azure-cli `
           --verbosity information `
