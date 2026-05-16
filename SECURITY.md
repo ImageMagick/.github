@@ -19,7 +19,7 @@ Before you report a vulnerability, first take the following steps:
   - An input file that can be used to demonstrate the vulnerability (if applicable)
 -  Any relevant logs or error messages.
 
-# Incident Response Plan 
+# Incident Response Plan
 
 Once a vulnerability is reported we will take the following steps:
 
@@ -45,12 +45,13 @@ flowchart TD
     ASSESS --> MEDIUM
     ASSESS --> HIGH
     ASSESS --> CRITICAL
-    
+
     NONE --> CLOSE
-    LOW --> UPDATE   
-    MEDIUM --> NOTIFY([Notify eligible sponsors])
-    HIGH --> NOTIFY
-    CRITICAL --> NOTIFY
+    LOW --> UPDATE
+    MEDIUM --> CVE([Request CVE])
+    HIGH --> CVE
+    CRITICAL --> CVE
+    CVE --> NOTIFY([Notify eligible sponsors])
 
     NOTIFY --> UPDATE([Update draft advisory])
     UPDATE --> PATCH([Create patch])
