@@ -1,64 +1,12 @@
-## Pre-Report Checklist
-
-Before you report a vulnerability, first take the following steps:
-
-- Ensure you are using the latest version of ImageMagick [7](https://github.com/ImageMagick/ImageMagick/releases) or [6](https://github.com/ImageMagick/ImageMagick6/releases)
-- Attempt to mitigate the vulnerability using a properly curated [security policy](https://imagemagick.org/script/security-policy.php)
-  - Verify your policy using the [validation tool](https://imagemagick-secevaluator.doyensec.com/)
-  - Confirm that the security policy mitigation steps did not resolve the issue
-
-## Reporting a Vulnerability
-
- If you have completed the above steps and confirmed that the security policy does not address the vulnerability, report the vulnerability as a [security advisory](https://github.com/ImageMagick/ImageMagick/security/advisories/new). Please include the following information:
-
-- A description of the vulnerability, including the version of ImageMagick affected.
-- Steps to reproduce the vulnerability:
-  - Operating system and version (e.g., Ubuntu 20.04, Windows 11, macOS 13.2)
-  - Compiler information and build configuration (if building from source)
-  - Minimal code sample or command line that demonstrates the vulnerability (if applicable)
-  - An input file that can be used to demonstrate the vulnerability (if applicable)
--  Any relevant logs or error messages.
-
-# Incident Response Plan
-
-Once a vulnerability is reported we will take the following steps:
-
-```mermaid
-flowchart TD
-    START([Report received]) --> VALIDATE{Validate vulnerability within 7 days}
-
-    VALIDATE -->|Invalid| CLOSE([Close advisory])
-    VALIDATE -->|Valid| DRAFT([Accept as draft])
-
-    DRAFT --> ASSESS{Assess severity}
-
-    subgraph severity [" "]
-        NONE["None<br/><br/><br/>&nbsp;"]
-        LOW["Low<br/><br/>Disclosed in:<br/>14 days"]
-        MEDIUM["Medium<br/><br/>Disclosed in:<br/>14 days"]
-        HIGH["High<br/><br/>Disclosed in:<br/>7 days"]
-        CRITICAL["Critical<br/><br/>Disclosed in:<br/>48 hours"]
-    end
-
-    ASSESS --> NONE
-    ASSESS --> LOW
-    ASSESS --> MEDIUM
-    ASSESS --> HIGH
-    ASSESS --> CRITICAL
-
-    NONE --> CLOSE
-    LOW --> UPDATE
-    MEDIUM --> CVE([Request CVE])
-    HIGH --> CVE
-    CRITICAL --> CVE
-    CVE --> NOTIFY([Notify eligible sponsors])
-
-    NOTIFY --> UPDATE([Update draft advisory])
-    UPDATE --> PATCH([Create patch])
-    PATCH --> RELEASE([New release])
-    RELEASE --> PUBLISH([Publish advisory])
-    PUBLISH -.-> DISCLOSE([Reporter disclosure])
-    style DISCLOSE stroke-dasharray: 7
-```
-
-**Note:** The timelines indicated in the incident response plan above are target goals and are not guaranteed. While we will make every effort to meet these timelines, actual remediation dates may vary depending on the complexity of the vulnerability, availability of maintainers, and other factors.
+> [!CAUTION]
+> ## 🌞 Summer of Bliss — July 1 to August 3, 2026
+>
+> **We are not accepting new security advisories during this period. Please do not report security issues until after August 3, 2026.**
+>
+> ImageMagick Studio LLC is one of the most widely used image processing tools in the world, and we're proud of that. But we're a small, volunteer-driven team and the last eight months have kept us very busy. We've worked hard to investigate and address a large number of security reports. We're grateful for every responsible disclosure and some of them even helped us fix bugs along the way. However, not all of them turned out to be the security issues they were reported as. Triaging and responding to all of them takes significant time and energy.
+>
+> That's why we're following the lead of the [curl project](https://curl.se/blog/2024-08-22-summer-of-bliss.html) and taking a break from accepting new security advisories. Daniel Stenberg and his team were the first to take this step in their "curl summer of bliss" and we think they're absolutely right. Open source maintainers need breathing room too.
+>
+> We're not disappearing. ImageMagick will continue to be maintained and developed, and we'll return to the security queue after this break. In the meantime, please make sure you're running the [latest release](https://github.com/ImageMagick/ImageMagick/releases), and thank you for your understanding and continued support.
+>
+> **Any security advisories opened between July 1 and August 3, 2026 will be closed without review.**
