@@ -11,6 +11,7 @@ Before you report a vulnerability, first take the following steps:
 
  If you have completed the above steps and confirmed that the security policy does not address the vulnerability, report the vulnerability as a [security advisory](https://github.com/ImageMagick/ImageMagick/security/advisories/new). Please include the following information:
 
+- Each user may have no more than three advisories in triage at any one time.
 - A description of the vulnerability, including the version of ImageMagick affected.
 - Steps to reproduce the vulnerability:
   - Operating system and version (e.g., Ubuntu 20.04, Windows 11, macOS 13.2)
