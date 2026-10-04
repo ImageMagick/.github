@@ -62,4 +62,6 @@ flowchart TD
     style DISCLOSE stroke-dasharray: 7
 ```
 
-**Note:** The timelines indicated in the incident response plan above are target goals and are not guaranteed. While we will make every effort to meet these timelines, actual remediation dates may vary depending on the complexity of the vulnerability, availability of maintainers, and other factors.
+**CVE requests:** Reporters should not request or assign a CVE. After validating a report, ImageMagick maintainers will determine whether a CVE is appropriate and request one when warranted.
+
+**Timelines:** The timelines in the incident response plan are targets, not guarantees. Actual remediation dates may vary depending on the complexity of the vulnerability and maintainer availability.
