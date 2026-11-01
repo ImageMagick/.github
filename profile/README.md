@@ -6,7 +6,7 @@
 
 ## What is ImageMagick?
 
-ImageMagick is a **free and open-source software suite** for reading, writing, and manipulating images across hundreds of formats. It empowers developers, designers, and artists with a robust set of tools to handle virtually any image-processing task.
+[ImageMagick](https://imagemagick.org) is a **free and open-source software suite** for reading, writing, and manipulating images across hundreds of formats. It empowers developers, designers, and artists with a robust set of tools to handle virtually any image-processing task.
 
 ---
 
