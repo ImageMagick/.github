@@ -62,6 +62,6 @@ flowchart TD
     style DISCLOSE stroke-dasharray: 7
 ```
 
-**CVE requests:** Reporters should not request or assign a CVE. After validating a report, ImageMagick maintainers will determine whether a CVE is appropriate and request one when warranted.
+**CVE requests:** Reporters should not request or assign a CVE. After validating a report, ImageMagick maintainers will determine whether a CVE is appropriate. If warranted, maintainers will request the CVE through GitHub's Security Advisories. Please do not request a CVE from another CVE Numbering Authority (CNA).
 
 **Timelines:** The timelines in the incident response plan are targets, not guarantees. Actual remediation dates may vary depending on the complexity of the vulnerability and maintainer availability.
